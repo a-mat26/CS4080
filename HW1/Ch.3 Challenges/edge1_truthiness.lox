@@ -1,0 +1,29 @@
+// EDGE CASE 1: What happens when a non-boolean value is used as a condition?
+
+if (0) { 
+    print "0 is truthy"; 
+}      
+else { 
+    print "0 is falsey"; 
+}
+
+if ("") { 
+    print "empty str truthy"; 
+} 
+else { 
+    print "empty str falsey"; 
+}
+
+if (nil) { 
+    print "nil is truthy"; 
+}    
+else { 
+    print "nil is falsey"; 
+}
+
+if (false) { 
+    print "false is truthy"; 
+}  
+else { 
+    print "false is falsey"; 
+}

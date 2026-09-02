@@ -1,0 +1,5 @@
+// EDGE CASE 2: In Lox does division by zero return a runtime error or return infinity?
+
+print 1 / 0;
+print -1 / 0;
+print 0 / 0;

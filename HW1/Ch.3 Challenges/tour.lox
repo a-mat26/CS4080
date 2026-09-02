@@ -1,0 +1,60 @@
+//random lox program for fun
+
+var name = "world";
+var count = 3;
+
+
+//built-in print
+print "Hello, " + name + "!";   
+print count / 2;                 
+print 3 == 3.0;                  
+
+if (count > 2) {
+  print "big";
+} else {
+  print "small";
+}
+
+var i = 0;
+while (i < 3) {
+  print i;
+  i = i + 1;
+}
+
+for (var j = 0; j < 3; j = j + 1) {
+  print j;
+}
+
+//greet me
+fun greet(who) {
+  return "Hi, " + who;
+}
+print greet("Aaron");
+
+fun makeAdder(n) {
+  fun add(x) { 
+    return x + n; 
+  }
+  return add;
+}
+
+var add5 = makeAdder(5);
+print add5(10);
+
+class Animal {
+  init(name) {
+    this.name = name;
+  }
+  speak() {
+    print this.name + " makes a sound.";
+  }
+}
+
+class Dog < Animal {
+  speak() {
+    super.speak();         // call the parent's version
+    print this.name + " barks!";
+  }
+}
+
+Dog("Rex").speak();

@@ -1,0 +1,11 @@
+fun counter() {
+  var n = 0;
+  fun tick() { 
+    n = n + 1; 
+    return n; 
+  }
+  return tick;
+}
+var c = counter();
+print c();   // expect: 1
+print c();   // expect: 2
