@@ -1,6 +1,6 @@
-# CS 4080 — Programming Languages
+# CS 4080 — Concepts of Programming Languages
 
-Coursework repository for **CS 4080: Programming Languages** at Cal Poly Pomona (Instructor: Rick Ramirez).
+Coursework repository for **CS 4080: Concepts of Programming Languages** at Cal Poly Pomona (Instructor: Rick Ramirez).
 
 ## About the Course
 
