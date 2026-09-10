@@ -25,7 +25,7 @@ submission stays self-contained and easy to review.
 ## About Me
 
 I'm Aaron, an undergraduate Computer Science student at Cal Poly Pomona taking CS 4080. I'm
-interested in how programming languages work under the hood — parsers, interpreters, and the runtime
-machinery that turns source code into behavior — and this course is a chance to build that from
+interested in how programming languages work under the hood - parsers, interpreters, and the runtime
+machinery that turns source code into behavior - and this course is a chance to build that from
 scratch rather than just read about it. Outside of class I like working on projects that let me apply
 what I've learned to something I can actually run and use.
