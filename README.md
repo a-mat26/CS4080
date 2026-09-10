@@ -6,8 +6,8 @@ Coursework repository for **CS 4080: Concepts of Programming Languages** at Cal 
 
 CS 4080 is a comprehensive introduction to programming language concepts, design principles, and
 implementation issues. The course covers fundamental ideas such as abstraction, information hiding,
-parameterization, and binding, and compares how major language constructs — data types, expressions,
-control structures, and encapsulation units — are designed across languages. Alongside the conceptual
+parameterization, and binding, and compares how major language constructs (data types, expressions,
+control structures, and encapsulation units) are designed across languages. Alongside the conceptual
 material from Sebesta's *Concepts of Programming Languages*, the course follows Nystrom's
 *Crafting Interpreters* to build the Lox language end to end: scanning and grammars, recursive-descent
 parsing, evaluation, scope and closures, classes and dynamic dispatch, and then a bytecode virtual
@@ -16,7 +16,7 @@ working understanding of both how languages are designed and how they are actual
 
 ## Purpose of This Repository
 
-This repository holds my work for CS 4080 — homework assignments, group exercises, and any
+This repository holds my work for CS 4080 - homework assignments, group exercises, and any
 accompanying source code, reports, and notes. Assignments in this course mix conceptual and
 problem-solving questions with hands-on implementation work, and deliverables may include a PDF
 report, source code, and a link to this repository. Work is organized per assignment so that each
