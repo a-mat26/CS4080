@@ -1,16 +1,9 @@
 package com.craftinginterpreters.lox;
-
 import java.util.List;
-
 import static com.craftinginterpreters.lox.TokenType.*;
 
 /**
- * Chapter 6, Challenges 1-3:
- *
- *   1, 2, 3                    becomes   (, (, 1.0 2.0) 3.0)
- *   true ? 1 : false ? 2 : 3   becomes   (?: true 1.0 (?: false 2.0 3.0))
- *   * 2                        reports   [line 1] Error at '*': ...
- *
+ * Chapter 6, Challenges 1-3
  */
 class Parser {
   private static class ParseError extends RuntimeException {}
@@ -36,8 +29,6 @@ class Parser {
   }
 
   // comma -> ternary ( "," ternary )* ;
-  // Same loop as equality(), so it's left-associative. No new node,
-  // it's just an Expr.Binary with the ',' token.
   private Expr comma() {
     Expr expr = ternary();
 
@@ -50,9 +41,6 @@ class Parser {
     return expr;
   }
 
-  // ternary -> equality ( "?" expression ":" ternary )? ;
-  // The middle is a full expression since '?' and ':' wrap it like
-  // parens. Recursing after the ':' makes it right-associative.
   private Expr ternary() {
     Expr condition = equality();
 
@@ -114,12 +102,6 @@ class Parser {
     return expr;
   }
 
-  // unary -> ( "!" | "-" ) unary
-  //        | ( "!=" | "==" ) comparison          (error)
-  //        | ( ">" | ">=" | "<" | "<=" ) term    (error)
-  //        | "+" factor                         (error)
-  //        | ( "/" | "*" ) unary                 (error)
-  //        | primary ;
   private Expr unary() {
     if (match(BANG, MINUS)) {
       Token operator = previous();
@@ -127,15 +109,17 @@ class Parser {
       return new Expr.Unary(operator, right);
     }
 
-    // Error productions. '-' is left out since it's real negation.
-    if (match(BANG_EQUAL, EQUAL_EQUAL, GREATER, GREATER_EQUAL,
+   
+    if (match(COMMA, BANG_EQUAL, EQUAL_EQUAL, GREATER, GREATER_EQUAL,
               LESS, LESS_EQUAL, PLUS, SLASH, STAR)) {
       Token operator = previous();
-      // Report without throwing so the parser keeps going.
       error(operator, "Binary operator is missing a left operand.");
 
-      // Parse and drop the right operand the normal rule would use.
+
       switch (operator.type) {
+        case COMMA:
+          ternary();
+          break;
         case BANG_EQUAL:
         case EQUAL_EQUAL:
           comparison();
@@ -155,7 +139,6 @@ class Parser {
           break;
       }
 
-      // No usable tree. hadError is set, so Lox never prints it.
       return null;
     }
 
