@@ -1,12 +1,9 @@
-// Goes in Parser, replacing unary(). The second if is the error production.
-
 private Expr unary() {
   if (match(BANG, MINUS)) {
     Token operator = previous();
     Expr right = unary();
     return new Expr.Unary(operator, right);
   }
-
   if (match(COMMA, BANG_EQUAL, EQUAL_EQUAL, GREATER, GREATER_EQUAL,
             LESS, LESS_EQUAL, PLUS, SLASH, STAR)) {
     Token operator = previous();
@@ -34,9 +31,7 @@ private Expr unary() {
         unary();
         break;
     }
-
     return null;
   }
-
   return primary();
 }

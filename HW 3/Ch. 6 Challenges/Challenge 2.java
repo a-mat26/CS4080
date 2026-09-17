@@ -1,7 +1,3 @@
-// Goes in Parser, between comma() and equality().
-// Needs the QUESTION and COLON tokens from Scanner, and the
-// "Ternary : Expr condition, Expr ifTrue, Expr ifFalse" node in GenerateAst.
-
 private Expr ternary() {
   Expr condition = equality();
 

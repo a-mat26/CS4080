@@ -1,5 +1,3 @@
-// Goes in Parser, replacing expression() and adding comma() after it.
-
 // expression -> comma ;
 private Expr expression() {
   return comma();
