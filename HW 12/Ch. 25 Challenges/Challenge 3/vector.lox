@@ -1,0 +1,20 @@
+fun Vector(x, y) {
+  fun vector(method) {
+    fun add(other) {
+      return Vector(x + other("x"), y + other("y"));
+    }
+    if (method == "x") return x;
+    if (method == "y") return y;
+    if (method == "add") return add;
+    print "Unknown method.";
+  }
+  return vector;
+}
+
+var a = Vector(1, 2);
+var b = Vector(3, 4);
+var c = a("add")(b);
+print c("x");
+print c("y");
+print a("x");
+print a("y");
